@@ -8,17 +8,18 @@ A slimmed down version of the [MAX Object Detector Web App](https://github.com/I
 
 ## Run Locally
 
-#### Start the Model API
+**Start the Model API**
 
 1. [Deploy the Model](#1-deploy-the-model)
 2. [Experiment with the API (Optional)](#2-experiment-with-the-api-optional)
 
-#### Start the Web App
+**Start the Web App**
 
 1. [Get a local copy of the repository](#1-get-a-local-copy-of-the-repository)
 2. [Install dependencies](#2-install-dependencies)
 3. [Start the web app server](#3-start-the-web-app-server)
 4. [Configure ports (Optional)](#4-configure-ports-optional)
+5. [Try out the full version (Optional)](#5-try-out-the-full-version-optional)
 
 ### Start the Model API
 
@@ -137,6 +138,12 @@ If you want to use a different port or are running the model API at a different 
 ```
 $ node app --port=[new port] --model=[endpoint url including protocol and port]
 ```
+
+#### 5. Try out the full version (Optional)
+
+The latest release of the full web app is deployed with the model API above and is available at [`http://localhost:5000/app`](http://localhost:5000/app).
+
+The full version includes more features like filtering the detected objects based on their labels or a threshold for the prediction accuracy
 
 # Links
 
