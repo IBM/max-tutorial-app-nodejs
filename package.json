@@ -1,0 +1,28 @@
+{
+  "name": "max-workshop-app-nodejs",
+  "version": "1.0.0",
+  "description": "A slimmed down version of the [MAX Object Detector Web App](https://github.com/IBM/MAX-Object-Detector-Web-App) for use in MAX workshops",
+  "main": "app.js",
+  "scripts": {
+    "test": "eslint --ignore-pattern *.min.js ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CODAIT/max-workshop-app-nodejs.git"
+  },
+  "author": "Alex Bozarth",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/CODAIT/max-workshop-app-nodejs/issues"
+  },
+  "homepage": "https://github.com/CODAIT/max-workshop-app-nodejs#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.87.0",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-strongloop": "^2.1.0"
+  }
+}
