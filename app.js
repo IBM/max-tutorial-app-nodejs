@@ -27,8 +27,11 @@ var args = yargs
 
 var app = express();
 
+// host the contents of the static dir at root (includes index.html)
 app.use(express.static('static'));
 
+/* Send all calls to /model/* to the same route on the model endpoint
+   and return the results returned by the model */
 app.all('/model/:route', function(req, res) {
   req.pipe(request(args.model + req.path)).pipe(res);
 });

@@ -23,23 +23,26 @@
 var color_box = '#00FF00'; // Lime
 var color_text = '#000000'; // Black
 
-// global var for current prediction results
+// current prediction results
 var predictions = [];
 
-// (re)paints canvas (if canvas exists) and triggers label visibility refresh
+// (re)paints canvas with the bounding boxes and labels (if the canvas exists)
 function paint_canvas() {
+
   // Check if the canvas exists to prevent errors
   if ($('#image-canvas').length) {
-    // Initialize the canvas and context vars
+
+    // Get the canvas and canvas context vars
+    // The canvas context is needed for painting on the canvas
     var ctx = $('#image-canvas')[0].getContext('2d');
     var can = ctx.canvas;
 
-    // Set canvas size to current image size
+    // Set the canvas size to match the current image size
     var img = $('#user-image');
     can.width = img.width();
     can.height = img.height();
 
-    // Clear canvas (for use on repaint)
+    // Clear canvas (needed on repaint)
     ctx.clearRect(0, 0, can.width, can.height);
 
     // Set canvas text settings (for labels)
@@ -80,6 +83,7 @@ function paint_label(i, ctx, can) {
 
   var label = predictions[i]['label'];
 
+  // get the label text width and height
   var tWidth = ctx.measureText(label).width;
   var tHeight = parseInt(ctx.font, 10) * 1.4;
 
@@ -87,31 +91,31 @@ function paint_label(i, ctx, can) {
   ctx.fillStyle = color_box;
   ctx.fillRect(x, y, tWidth + 3, tHeight);
 
-  // paint the label
+  // paint the label on top of the background box
   ctx.fillStyle = color_text;
   ctx.fillText(label, x + 1, y);
 }
 
 // Run or bind functions on page load
 $(function() {
-  // Update canvas when window resizes
-  $(window).resize(function(){
+  // Update canvas when window resizes (since large images are fit to width)
+  $(window).resize(function() {
     paint_canvas();
   });
 
   // Image upload form submit functionality
   $('#file-upload').on('submit', function(event){
-    // Stop form from submitting normally
+    // Stop form from submitting normally (would otherwise refresh page)
     event.preventDefault();
 
-    // Create form data
+    // Create form data for submission to model
     var form = event.target;
     var file = form[0].files[0];
     var data = new FormData();
     data.append('image', file);
     data.append('threshold', 0.5);
 
-    // Display image on UI
+    // Display image on the UI and create canvas
     var reader = new FileReader();
     reader.onload = function(event) {
       var file_url = event.target.result;
@@ -127,7 +131,7 @@ $(function() {
       $('#file-submit').text('Detecting...');
       $('#file-submit').prop('disabled', true);
 
-      // Perform file upload
+      // Send image file form to model for prediction
       $.ajax({
         url: '/model/predict',
         method: 'post',
@@ -136,6 +140,7 @@ $(function() {
         data: data,
         dataType: 'json',
         success: function(data) {
+          // Save the predictions and paint them on the canvas
           predictions = data['predictions'];
           paint_canvas();
           if (predictions.length === 0) {
