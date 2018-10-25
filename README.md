@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.org/CODAIT/max-workshop-app-nodejs.svg?branch=master)](https://travis-ci.org/CODAIT/max-workshop-app-nodejs)
 
-# MAX Object Detector Web App (Lite)
+# MAX Object Detector Web App (Lite) - NodeJS
 
 A slimmed down version of the [MAX Object Detector Web App](https://github.com/IBM/MAX-Object-Detector-Web-App) for use in MAX workshops
+
+> This is the node version of this Web App, you can also check out the [Python version](https://github.com/CODAIT/max-workshop-app-python)
 
 # Steps
 
