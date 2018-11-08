@@ -4,6 +4,7 @@
   "description": "A slimmed down version of the [MAX Object Detector Web App](https://github.com/IBM/MAX-Object-Detector-Web-App) for use in MAX workshops",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "eslint --ignore-pattern *.min.js ."
   },
   "repository": {
@@ -22,7 +23,7 @@
     "yargs": "^11.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.0.1",
+    "eslint": "^5.8.0",
     "eslint-config-strongloop": "^2.1.0"
   }
 }

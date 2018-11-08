@@ -152,7 +152,7 @@ $(function() {
         },
         complete: function() {
           // Re-enable upload button
-          $('#file-submit').text('Submit');
+          $('#file-submit').text('Detect Objects');
           $('#file-submit').prop('disabled', false);
           $('#file-input').val('');
         },
