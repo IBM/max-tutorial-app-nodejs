@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/CODAIT/max-workshop-app-nodejs.svg?branch=master)](https://travis-ci.org/CODAIT/max-workshop-app-nodejs)
+[![Build Status](https://travis-ci.org/IBM/max-tutorial-app-nodejs.svg?branch=master)](https://travis-ci.org/IBM/max-tutorial-app-nodejs)
 
 # MAX Object Detector Web App (Lite) - NodeJS
 
-A slimmed down version of the [MAX Object Detector Web App](https://github.com/IBM/MAX-Object-Detector-Web-App) for use in MAX workshops.
+A slimmed down version of the [MAX Object Detector Web App](https://github.com/IBM/MAX-Object-Detector-Web-App) for use in the MAX tutorial.
 
 This repository's default branch, `initial`, contains **TODOs** meant to be completed while following the
-[MAX Developer Tutorial](https://github.com/CODAIT/max-developer-tutorial).
+[MAX Developer Tutorial](https://github.com/IBM/max-developer-tutorial).
 A working version of the app without the **TODOs** can be found on the `solution` branch.
 
-> This is the node version of this Web App, you can also check out the [Python version](https://github.com/CODAIT/max-workshop-app-python)
+> This is the node version of this Web App, you can also check out the [Python version](https://github.com/IBM/max-tutorial-app-python)
 
 # Steps
 
@@ -110,13 +110,13 @@ The default value for `threshold` is `0.7`.
 Clone the web app repository locally. In a terminal, run the following command:
 
 ```
-$ git clone https://github.com/CODAIT/max-workshop-app-nodejs.git
+$ git clone https://github.com/IBM/max-tutorial-app-nodejs.git
 ```
 
 Change directory into the repository base folder:
 
 ```
-$ cd max-workshop-app-nodejs
+$ cd max-tutorial-app-nodejs
 ```
 
 #### 2. Install dependencies
