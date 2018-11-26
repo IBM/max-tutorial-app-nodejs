@@ -133,22 +133,15 @@ $(function() {
 
       // Send image file form to model for prediction
       $.ajax({
-        // TODO T1: replace inference URL placeholder
-        url: '**TODO**',
-        // TODO T2: replace inference HTTP method placeholder
-        method: '**TODO**',
+        url: '/model/predict',
+        method: 'post',
         processData: false,
         contentType: false,
         data: data,
         dataType: 'json',
         success: function(data) {
           // Save the predictions and paint them on the canvas
-          // TODO: (1) inspect the returned data structure "data"
-          //           using your browser's developer tools
-          //       (2) uncommment thec code snippet below
-          //       (3) replace result property name placeholder
-          // predictions = data['**TODO**'];
-
+          predictions = data['predictions'];
           paint_canvas();
           if (predictions.length === 0) {
             alert('No Objects Detected');
