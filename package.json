@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CODAIT/max-workshop-app-nodejs.git"
+    "url": "git+https://github.com/IBM/max-workshop-app-nodejs.git"
   },
   "author": "Alex Bozarth",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/CODAIT/max-workshop-app-nodejs/issues"
+    "url": "https://github.com/IBM/max-workshop-app-nodejs/issues"
   },
-  "homepage": "https://github.com/CODAIT/max-workshop-app-nodejs#readme",
+  "homepage": "https://github.com/IBM/max-workshop-app-nodejs#readme",
   "dependencies": {
     "express": "^4.16.3",
     "request": "^2.87.0",
