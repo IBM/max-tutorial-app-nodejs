@@ -112,6 +112,9 @@ $(function() {
     var form = event.target;
     var file = form[0].files[0];
     var data = new FormData();
+
+    // TODO R1: review inference request payload
+    // Required inference request parameter: image (JPG/PNG encoded)
     data.append('image', file);
     data.append('threshold', 0.5);
 
@@ -143,10 +146,10 @@ $(function() {
         dataType: 'json',
         success: function(data) {
           // Save the predictions and paint them on the canvas
-          // TODO: (1) inspect the returned data structure "data"
-          //           using your browser's developer tools
-          //       (2) uncommment thec code snippet below
-          //       (3) replace result property name placeholder
+          // TODO T3: (1) inspect the returned data structure "data"
+          //              using your browser's developer tools
+          //          (2) uncommment thec code snippet below
+          //          (3) replace result property name placeholder
           // predictions = data['**TODO**'];
 
           paint_canvas();
